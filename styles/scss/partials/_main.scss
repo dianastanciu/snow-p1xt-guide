@@ -156,6 +156,18 @@
 .hide-scroll-body {
   overflow: hidden;
 }
+//burger x
+.burger-x {
+  .line1 {
+    transform: rotate(43deg) translate(10px, 10px);
+  }
+  .line2 {
+    transform: scale(0);
+  }
+  .line3 {
+    transform: rotate(-43deg) translate(6px, -6px);
+  }
+}
 //********** /HEADER **********//
 
 .test {height: 500px;}
