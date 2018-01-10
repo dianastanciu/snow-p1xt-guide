@@ -3,7 +3,6 @@
   .container {
     grid-column: 2 / span 10;
     margin: 0 15px;
-
   }
 }
 
@@ -13,15 +12,47 @@
   }
 }
 
-
 @media screen and (max-width: 575px) {
   .container {
     grid-column: 1 / span 12;
     margin: 0 15px;
   }
 }
-//***/layout***//
 
+//***/layout***//
 //***header***//
+//navigation
+@media screen and (min-width: 992px) {
+  .header {
+    .container {
+      .navigation {
+        .burger-container {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    .container {
+      .navigation {
+        grid-template-columns: 150px auto;
+        .blank {
+          display: none;
+        }
+
+        .links {
+          display: none;
+        }
+
+        .burger-container {
+          display: grid;
+        }
+      }
+    }
+  }
+}
 
 //***/header***//
