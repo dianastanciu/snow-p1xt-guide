@@ -1,0 +1,23 @@
+//***layout***//
+@media screen and (max-width: 1199px) {
+  .container {
+    grid-column: 2 / span 10;
+    margin: 0 15px;
+
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    grid-column: 2 / span 10;
+  }
+}
+
+
+@media screen and (max-width: 575px) {
+  .container {
+    grid-column: 1 / span 12;
+    margin: 0 15px;
+  }
+}
+//***/layout***//
