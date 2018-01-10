@@ -17,6 +17,7 @@
   }
 
   .container {
+    z-index: 99;
     // border: 1px solid;
 
     .navigation {
@@ -48,10 +49,13 @@
             height: 100%;
             color: hsla(0, 0%, 100%, 0.8);
             text-transform: uppercase;
+            transition: all .3s ease;
             font: {
               size: $nav__font-size;
               weight: $nav__font-weight;
             }
+
+            &:hover {color: hsla(0, 0%, 100%, 1);}
           }
         }
       }
@@ -90,12 +94,8 @@
       left: 0;
       z-index: 3;
       transition: all .5s ease;
-
-      display: grid;
       grid-template-columns: repeat(12, 1fr);
       align-items: center;
-
-
 
       .hidden-menu-links {
         z-index: 4;
@@ -115,6 +115,9 @@
               weight: $nav__hidden-menu-font-weight;
             }
             color: hsla(0, 0%, 100%, 0.8);
+            transition: all .3s ease;
+
+            &:hover {color: hsla(0, 0%, 100%, 1);}
           }
         }
       }
@@ -133,6 +136,9 @@
           justify-content: center;
           i {
             color: hsla(0, 0%, 100%, 0.8);
+            transition: all .3s ease;
+
+            &:hover {color: hsla(0, 0%, 100%, 1);}
           }
         }
       }
@@ -145,9 +151,10 @@
   display: none;
   opacity: 0;
 }
+
 //show hidden menu
 .show-hidden-menu {
-  display: block;
+  display: grid;
   opacity: 1;
 }
 
@@ -155,16 +162,17 @@
 .hide-scroll-body {
   overflow: hidden;
 }
+
 //burger x
 .burger-x {
   .line1 {
-    transform: rotate(43deg) translate(10px, 10px);
+    transform: rotate(43deg) translate(8px, 8px);
   }
   .line2 {
     transform: scale(0);
   }
   .line3 {
-    transform: rotate(-43deg) translate(6px, -6px);
+    transform: rotate(-43deg) translate(8px, -8px);
   }
 }
 //********** /HEADER **********//
