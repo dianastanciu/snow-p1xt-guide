@@ -1,13 +1,12 @@
 //***layout***//
 .wrapper {
-  border: 1px solid;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   height: 100vh;
 }
 
 .container {
-  background: rgb(158, 147, 147);
+  z-index: 2;
   grid-column: 2 / span 10;
 }
 //***/layout***//
