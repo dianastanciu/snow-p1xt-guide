@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  // * { border: 1px solid rgb(255, 255, 255); } //temp
+  
 
   &:before {
     content: "";
@@ -246,7 +246,43 @@
 //********** /HEADER **********//
 
 
-.test {
-  height: 5200px;
-  background: grey;
+//********** ABOUT **********//
+.about {
+  height: 400px;
+  padding-top: 100px;
+  // * { border: 1px solid rgb(0, 0, 0); } //temp
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+
+    .text {
+      text-align: center;
+      width: 60%;
+
+      h2 {
+        font: {
+          size: $title-font-size;
+          weight: $title-font-weight;
+        }
+      }
+
+      p {
+        color: #5f5f5f;
+        margin: 2em 0;
+        font: {
+          size: $text-font-size;
+          weight: $text-font-weight;
+        }
+      }
+
+      img {
+        max-height: 150px;
+      }
+    }
+  }
 }
+//********** /ABOUT **********//
+
+
