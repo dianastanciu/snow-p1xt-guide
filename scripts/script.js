@@ -35,6 +35,14 @@ $(document).ready(function() {
     $(".burger").toggleClass("burger-x");
     $(".hidden-menu").toggleClass("hide-hidden-menu").toggleClass("show-hidden-menu");
     $("body").toggleClass("hide-scroll-body");
+    
+    nav.toggleClass("nav-scrolled");
+    burgerLines.css("background", "hsl(0, 0%, 100%)");
+    $("#logo").attr("src", "./images/logo-light.svg");
+    
+    if (nav.hasClass("nav-scrolled")) {
+      nav.toggleClass("nav-scrolled");
+    } 
   });
   //******** /mobile menu ********/
 

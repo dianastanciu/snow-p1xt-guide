@@ -39,6 +39,7 @@
     .container {
       .navigation {
         grid-template-columns: 150px auto;
+        z-index: 4;
         .blank {
           display: none;
         }
