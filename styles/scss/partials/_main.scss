@@ -4,6 +4,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  // * { border: 1px solid rgb(255, 255, 255); } //temp
 
   &:before {
     content: "";
@@ -17,16 +18,15 @@
   }
 
   .container {
-    z-index: 99;
-    // border: 1px solid;
-
     .navigation {
+      transition: all 0.3s ease;
       height: 100px;
-      padding: 15px 0;
+      padding: 0 10%;
       display: grid;
-      grid-template-columns: 150px 1fr 2fr;
-
-      // * { border: 1px solid rgb(255, 255, 255); } //temp
+      grid-template-columns: 150px 1fr 1fr;
+      position: fixed;
+      width: 100%;
+      left: 0;
 
       .logo {
         display: grid;
@@ -143,6 +143,71 @@
         }
       }
     }
+
+    .header__contents {
+      border-color: red;
+      margin-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+      width: 100%;
+      text-align: center;
+
+      .title, .subtitle {
+        color: #fff;
+      }
+
+      .title {
+        h1, h2 {
+          font: {
+            size: $header__title-font-size;
+            weight: $header__title-font-weight;
+          }
+          line-height: 1.2em;
+        }
+        h1 {
+          font-weight: $header__title-big-font-weight;
+        }
+        h2 {
+          font-style: italic;
+        }
+      }
+
+      .subtitle {
+        font: {
+          size: $header__subtitle-font-size;
+          weight: $header__subtitle-font-weight;
+        }
+        text-transform: uppercase;
+        line-height: 1em;
+      }
+
+      .button {
+        margin-top: 2.5em;
+      }
+
+      .scroll {
+        position: absolute;
+        bottom: 0.75em;
+        left: 50%;
+        transform: translate(-50%);
+
+        i {
+          font-size: 4em;
+          color: hsla(0, 0%, 100%, 0.603);
+          transition: all .3s ease;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          i {
+            color: hsla(0, 0%, 100%, 1);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -177,4 +242,8 @@
 }
 //********** /HEADER **********//
 
-.test {height: 500px;}
+
+.test {
+  height: 5200px;
+  background: grey;
+}

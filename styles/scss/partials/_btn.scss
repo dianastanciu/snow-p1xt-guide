@@ -1,0 +1,15 @@
+.btn {
+  padding: 18px 25px;
+  background: hsl(0, 0%, 15%);
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  transition: all .3s ease;
+  font: {
+    size: $btn-font-size;
+    weight: $btn-font-weight;
+  }
+
+  &:hover {
+    background: hsl(0, 0%, 21%);
+  }
+}
