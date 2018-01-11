@@ -248,15 +248,14 @@
 
 //********** ABOUT **********//
 .about {
-  height: 400px;
   padding-top: 100px;
-  // * { border: 1px solid rgb(0, 0, 0); } //temp
+  height: auto;
+
   .container {
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
 
     .text {
       text-align: center;
@@ -286,4 +285,57 @@
 }
 //********** /ABOUT **********//
 
+//********** FEATURES **********//
+.features {
+  height: auto;
+  // * { border: 1px solid rgb(255, 255, 255); } //temp
+  .container {
+    z-index: 1;
+    margin: 100px 0 0 0;
+    padding: 50px 0;
+    grid-column: 1 / span 12;
+    background: url('../../images/curls.png');
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 
+    .items-container {
+      grid-column: 2 / span 10;
+      height: auto;
+      display: grid;
+      justify-content: space-around;
+      grid-template-columns: repeat(auto-fit, 210px);
+      grid-gap: 30px;
+
+      .item {
+        color: white;
+        display: flex;
+
+        .icon {
+          display: flex;
+          align-items: center;
+
+          i {
+            font-size: 3em;
+          }
+        }
+
+        .text {
+          padding-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .title {
+            font-size: 1.3em;
+          }
+
+          .subtitle {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+}
+
+//********** /FEATURES **********//
