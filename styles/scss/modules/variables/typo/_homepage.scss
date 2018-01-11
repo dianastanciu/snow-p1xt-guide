@@ -6,15 +6,16 @@
 // --title
 $header__title-font-size: $xxl-font-size;
 $header__title-font-weight: $normal-weight;
+$header__title-big-font-weight: $bold-weight;
 // --subtitle
-$header__subtitle-font-size: $x-s-font-size;
-$header__subtitle-font-weight: $normal-weight;
+$header__subtitle-font-size: $s-font-size;
+$header__subtitle-font-weight: $bold-weight;
 
 
 //*****nav*****
 $nav__font-size: $x-s-font-size;
 $nav__font-weight: $normal-weight;
-$nav__hidden-menu-font-size: $m-font-size;
+$nav__hidden-menu-font-size: $l-font-size;
 $nav__hidden-menu-font-weight: $bold-weight;
 
 //*****button*****

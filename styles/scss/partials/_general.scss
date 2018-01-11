@@ -10,3 +10,15 @@
   grid-column: 2 / span 10;
 }
 //***/layout***//
+
+/*navigation on scroll*/
+.nav-scrolled {
+  background: rgb(255, 255, 255);
+  transition: all .3s ease;
+  z-index: 999;
+}
+
+
+.white-bg {
+  background: hsl(0, 0%, 100%);
+}

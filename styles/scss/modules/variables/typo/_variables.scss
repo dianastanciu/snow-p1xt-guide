@@ -7,14 +7,15 @@ $xs-line-height: 12px;
 $xxl-line-height: 70px;
 
 //font-size:
-$xxs-font-size: 12px;
-$x-s-font-size: 14px;
-$xs-font-size: 15px;
-$s-font-size: 18px;
-$s-m-font-size: 21px;
-$m-font-size: 25px;
-$xl-font-size: 39px;
-$xxl-font-size: 51px;
+$xxs-font-size: 0.75em; //12px
+$x-s-font-size: 0.875em; //14px
+$xs-font-size: 0.9375em; //15px
+$s-font-size: 1.125em; //18px
+$s-m-font-size: 1.3125em; //21px
+$m-font-size:  1.5625em; //25px
+$l-font-size: 1.875em; //30px;
+$xl-font-size: 2.4375em; //39px
+$xxl-font-size: 3.1875em; //51px
 
 //font-weight:
 $m-font-weight: 400;
