@@ -129,6 +129,7 @@
         transform: translateX(-50%);
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
         width: 120px;
 
         .link {
@@ -137,6 +138,7 @@
           i {
             color: hsla(0, 0%, 100%, 0.8);
             transition: all .3s ease;
+            font-size: $nav__hidden-menu-font-size;
 
             &:hover {color: hsla(0, 0%, 100%, 1);}
           }
@@ -175,6 +177,7 @@
       }
 
       .subtitle {
+        margin-bottom: 1.3125em;
         font: {
           size: $header__subtitle-font-size;
           weight: $header__subtitle-font-weight;
