@@ -42,6 +42,7 @@ $(document).ready(function() {
     
     if (nav.hasClass("nav-scrolled")) {
       nav.toggleClass("nav-scrolled");
+      burgerLines.css("background", "hsl(0, 0%, 0%)");
     } 
   });
   //******** /mobile menu ********/
