@@ -261,10 +261,6 @@
       text-align: center;
       width: 60%;
 
-      .description {
-        margin: 2em 0;
-      }
-
       img {
         max-height: 150px;
       }
@@ -403,6 +399,8 @@
           text-align: center;
 
           .hidden-title {
+            transform: translateY(15px); opacity: 0;
+
             font: {
               family: $play;
               size: 1.7em;
@@ -412,6 +410,8 @@
           }
 
           .hidden-subtitle {
+            transform: translateY(15px); opacity: 0;
+
             font: {
               family: $work;
               size: 0.9em;
