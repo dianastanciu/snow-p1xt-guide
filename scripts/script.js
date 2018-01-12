@@ -97,6 +97,7 @@ $(document).ready(function() {
     dots: true
   });
 
+
   $("#partners").owlCarousel({
     loop:true,
     margin:10,
