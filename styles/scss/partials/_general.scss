@@ -23,3 +23,19 @@
 .white-bg {
   background: hsl(0, 0%, 100%);
 }
+
+.title {
+  font: {
+    size: $title-font-size;
+    weight: $title-font-weight;
+    family: $play;
+  }
+}
+
+.description {
+  font: {
+    size: $text-font-size;
+    weight: $text-font-weight;
+  }
+  color: #5f5f5f;
+}

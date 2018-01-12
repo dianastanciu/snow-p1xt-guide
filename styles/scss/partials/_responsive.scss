@@ -71,3 +71,59 @@
 }
 
 //***/header***//
+
+//***best projects***//
+@media screen and (min-width: 1230px) {
+  .best-projects {
+    .container {
+      .projects {
+        grid-template-columns: repeat(3, 400px);
+
+        .project-item {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1229px) {
+  .best-projects {
+    .container {
+      .projects {
+        grid-template-columns: repeat(2, 400px);
+
+        .project-item {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 843px) {
+  .best-projects {
+    .container {
+      .projects {
+        grid-template-columns: repeat(1, 1fr);
+
+        .project-item {
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .best-projects {
+    .container {
+      .projects {
+        grid-template-columns: repeat(1, 1fr);
+
+        .project-item {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+//***/best projects***//
