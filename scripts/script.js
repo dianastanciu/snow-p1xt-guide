@@ -70,4 +70,19 @@ $(document).ready(function() {
       $('body, html').animate({scrollTop: pos});
     });
   //******** /smooth scrolling ********/
+  
+
+  //******** BEST PROJECTS ********/
+  for (var i = 1; i < 10; i++) {
+    //---------mouseenter
+    $(".project-item" + i).on("mouseenter", function() {
+        $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle-r show-hidden-title-subtitle");
+    });
+
+    //---------mouseleave
+    $(".project-item" + i).on("mouseleave", function() {
+        $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle show-hidden-title-subtitle-r");
+    });
+  }
+  //******** /BEST PROJECTS ********/
 });

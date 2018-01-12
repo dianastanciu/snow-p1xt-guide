@@ -359,12 +359,6 @@
       grid-template-columns: repeat(auto-fill, 300px);
       justify-content: center;
 
-      .project-item {
-        margin: 0;
-        height: 300px;
-        background-size: cover;
-      }
-
       .project-item1 {background-image: url("../../images/project-1.jpg");}
       .project-item2 {background-image: url("../../images/project-2.jpg");}
       .project-item3 {background-image: url("../../images/project-3.jpg");}
@@ -374,8 +368,80 @@
       .project-item7 {background-image: url("../../images/project-7.jpg");}
       .project-item8 {background-image: url("../../images/project-8.jpg");}
       .project-item9 {background-image: url("../../images/project-9.jpg");}
+
+      .project-item {
+        margin: 0;
+        height: 300px;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: hsla(0, 0%, 0%, 0.7);
+          opacity: 0;
+          transition: all .3s ease;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+
+        .hidden-container {
+          height: auto;
+          text-align: center;
+
+          .hidden-title {
+            font: {
+              family: $play;
+              size: 1.7em;
+              weight: $bold-weight;
+            }
+            color: #fff;
+          }
+
+          .hidden-subtitle {
+            font: {
+              family: $work;
+              size: 0.9em;
+              weight: $bold-weight;
+            }
+            text-transform: uppercase;
+            color: #fff;
+          }
+        }
+      }
+
     }
   }
+}
+
+.show-hidden-title-subtitle {
+  animation: show-hidden-title-subtitle .5s forwards;
+}
+
+@keyframes show-hidden-title-subtitle {
+  0% {transform: translateY(15px); opacity: 0;}
+  100% {transform: translateY(0); opacity: 1;}
+}
+
+.show-hidden-title-subtitle-r {
+  animation: show-hidden-title-subtitle-r .5s forwards;
+}
+@keyframes show-hidden-title-subtitle-r {
+  0% {transform: translateY(0); opacity: 1;}
+  100% {transform: translateY(15px); opacity: 0;}
 }
 //********** /BEST PROJECTS **********//
 
