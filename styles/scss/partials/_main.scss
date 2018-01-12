@@ -331,6 +331,7 @@
 .best-projects {
   height: auto;
   padding-bottom: 100px;
+  overflow: hidden;
   // * { border: 1px solid rgb(158, 0, 0); } //temp
   .container {
     z-index: 1;
@@ -339,13 +340,10 @@
     align-items: center;
     justify-content: center;
     height: auto;
-
-    .text, .projects {
-      display: flex;
-      height: 300px; 
-    }
+    padding: 100px 0;
 
     .text {
+      display: flex;
       width: 60%;
       display: flex;
       flex-direction: column;
@@ -353,15 +351,12 @@
       justify-content: flex-end;
       text-align: center;
       padding-bottom: 50px;
-      
     }
 
     .projects {
       display: grid;
       width: 80%;
       grid-template-columns: repeat(auto-fill, 300px);
-      grid-gap: 0;
-      grid-row-gap: -10px;
       justify-content: center;
 
       .project-item {
@@ -383,3 +378,14 @@
   }
 }
 //********** /BEST PROJECTS **********//
+
+/*************************************
+********* T E S T *******************
+************************************/
+// .test {
+//   height: 1500px;
+//   border: 1px solid blue;
+// }
+/*************************************
+********* T E S T *******************
+************************************/
