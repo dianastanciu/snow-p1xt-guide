@@ -89,12 +89,26 @@ $(document).ready(function() {
 
 
   //******** TESTIMONIALS ********/
-  $(".owl-carousel").owlCarousel({
+  $("#testimonial").owlCarousel({
     loop:true,
     margin:10,
     nav:true,
     items: 1,
     dots: true
+  });
+
+  $("#partners").owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    items: 5,
+    dots: true, 
+    responsive: {
+      1000: { items: 5},
+      843: {items: 4},
+      500: {items: 3},
+      0: {items: 2}
+    }
   });
   //******** /TESTIMONIALS ********/
 });
