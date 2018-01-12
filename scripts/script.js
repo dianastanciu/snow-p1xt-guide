@@ -1,3 +1,4 @@
+//******** navigation on scroll ********/
 const nav = $(".navigation");
 const burgerLines = $(".header .container .navigation .burger-container .burger > div");
 const navLinks = $(".header > .container > .navigation > .links > .link > a");
@@ -27,7 +28,7 @@ if (winWidth <= 767) {
         }
     });
 }
-
+//******** navigation on scroll ********/
 
 $(document).ready(function() {
   //******** mobile menu ********/
