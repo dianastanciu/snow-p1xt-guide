@@ -88,7 +88,7 @@ $(document).ready(function() {
   //******** /BEST PROJECTS ********/
 
 
-  //******** TESTIMONIALS ********/
+  //******** carousles ********/
   $("#testimonial").owlCarousel({
     loop:true,
     margin:10,
@@ -111,5 +111,17 @@ $(document).ready(function() {
       0: {items: 2}
     }
   });
-  //******** /TESTIMONIALS ********/
+
+  $("#blog").owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    dots: true, 
+    responsive: {
+      1000: {items: 3},
+      500: {items: 2},
+      0: {items: 1}
+    }
+  });
+  //******** /carousels ********/
 });
