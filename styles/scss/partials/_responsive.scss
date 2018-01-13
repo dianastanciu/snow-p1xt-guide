@@ -137,3 +137,21 @@
   }
 }
 //***/testimonial***//
+
+
+//***contact***//
+@media screen and (max-width: 843px) {
+  .contact {
+    .container {
+      grid-template-rows: 1fr 1fr;
+      .text-container {
+        grid-column: 1 / span 12;
+      }
+
+      .form-container{
+        grid-column: 1 / span 12;
+      }
+    }
+  }
+}
+//***/contact***//

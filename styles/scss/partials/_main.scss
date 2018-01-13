@@ -562,7 +562,6 @@
 .blog {
   height: auto;
   background: hsl(0, 0%, 98%);
-  // * { border: 1px solid rgb(158, 0, 0); } //temp
   .container {
     z-index: 1;
     margin: 0;
@@ -577,7 +576,7 @@
       margin-bottom: 20px;
       width: 70%;
     }
-
+    
     #blog {
       &:hover {
         cursor: move; /* fallback if grab cursor is unsupported */
@@ -585,77 +584,137 @@
         cursor: -moz-grab;
         cursor: -webkit-grab;
       }
-    .item {
-      .image {
-        height: 220px;
-        background: url('../../images/blog-1.jpg');
-        background-size: cover;
-        position: relative;
-
-        &:before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: hsla(0, 0%, 100%, 0);
-          transition: all 0.3s ease;
-        }
-
-        &:hover {
-          cursor: pointer;
+      .item {
+        .image {
+          height: 220px;
+          background: url('../../images/blog-1.jpg');
+          background-size: cover;
+          position: relative;
+          
           &:before {
-            background: hsla(0, 0%, 100%, 0.2);
-          }
-        }
-
-        .button{
-          position: absolute;
-          bottom: 5px;
-          left: 5px;
-          .btn {
-            padding: 7px 23px;
-          }
-        }
-      }
-
-      .text {
-        background: rgb(255, 255, 255);
-        padding: 10px 0;
-        width: auto;
-
-        .text-container {
-          padding: 30px 20px 0;
-          text-align: left;
-
-          .title {
-            font-size: 1.2em;
-            text-transform: capitalize;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: hsla(0, 0%, 100%, 0);
             transition: all 0.3s ease;
-            &:hover {
-              color: #575757;
-              cursor: pointer;
+          }
+          
+          &:hover {
+            cursor: pointer;
+            &:before {
+              background: hsla(0, 0%, 100%, 0.2);
             }
           }
-
-          .date {
-            text-transform: uppercase;
-            font-size: 0.8em;
-            margin-top: 1em;
+          
+          .button{
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            .btn {
+              padding: 7px 23px;
+            }
           }
-
-          .description {
-            font-size: 0.9em;
-            margin-top: 1em;
+        }
+        
+        .text {
+          background: rgb(255, 255, 255);
+          padding: 10px 0;
+          width: auto;
+          
+          .text-container {
+            padding: 30px 20px 0;
+            text-align: left;
+            
+            .title {
+              font-size: 1.2em;
+              text-transform: capitalize;
+              transition: all 0.3s ease;
+              &:hover {
+                color: #575757;
+                cursor: pointer;
+              }
+            }
+            
+            .date {
+              text-transform: uppercase;
+              font-size: 0.8em;
+              margin-top: 1em;
+            }
+            
+            .description {
+              font-size: 0.9em;
+              margin-top: 1em;
+            }
           }
         }
       }
     }
   }
-  }
 }
 
 //********** /BLOG **********//
+//********** CONTACT **********//
+.contact {
+  // * { border: 1px solid rgb(158, 0, 0); } //temp
+  height: auto;
+  background: #F6F6F6;
+  
+  .container {
+    height: auto; 
+    padding: 50px 0 70px 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 
+    .text-container {
+      grid-column: 1 / span 5; 
+
+      p {
+        line-height: 1.7;
+      }
+    }
+
+    .form-container {
+      grid-column: 6 / span 7;
+
+      .form {
+        display: grid;
+        grid-row-gap: 24px;
+        grid-template: 50px 50px auto 30px / 80%;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        
+        input, textarea {
+          font-family: $work;
+          border: none;
+          padding: 13px;
+          &::placeholder {
+           font-family: $work;
+          }
+        }
+
+        .text-email-input {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px
+        }
+        .textarea-input, .name-input {
+          width: 100%;
+        }
+
+        .btn {
+          border: none; 
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+//********** /CONTACT **********//
 /*************************************
 ********* T E S T *******************
 ************************************/
