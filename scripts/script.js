@@ -134,7 +134,7 @@ $(document).ready(function() {
   //******** /carousels ********/
   
   //if on homepage, scroll to top header when clicking on the logo
-  if (window.location['pathname'] === '/index.html' || window.location['pathname'] === '/') {
+  if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/') {
     $("#linkClick").attr("href", "#header");
   } 
 
