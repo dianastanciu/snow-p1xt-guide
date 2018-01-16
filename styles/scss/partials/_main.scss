@@ -767,6 +767,133 @@
 //********** /FOOTER **********//
 
 /*************************************
+********* PORTFOLIO PAGE *************
+************************************/
+
+//********** HEADER **********//
+.header-portfolio {
+  height: 100px;
+  background-color: hsl(0, 0%, 100%);
+  background-image: none;
+
+  .container {
+    .navigation {
+      .links {
+        .link {
+          a {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    background: none;
+  }
+}
+
+.best-projects-portfolio {
+  background: #F6F6F6;
+}
+
+.footer-portfolio {
+  .container {
+    grid-column: 1 / span 12;
+    background: #F6F6F6;
+  }
+}
+
+.load-more {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #3b3b3b;
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    p {
+      color: #959595;
+    }
+  }
+}
+
+.best-projects-portfolio {
+ .container {
+   padding-top: 40px;
+  .page-menu {
+    position: relative;
+    width: 17px;
+    height: 17px;
+  
+     &:before, &:after {
+       content:"";
+       position: absolute;
+       width: 6px;
+       height: 6px;
+       background: hsl(0, 0%, 0%);  
+       top: 0;
+       left: 0;  
+       transition: all .3s ease;
+      }
+  
+      &:after {
+        right: 0;
+        left: auto;
+      }
+  
+      span {
+        &:before, &:after {
+          content:"";
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          background: hsl(0, 0%, 0%);  
+          bottom: 0;
+          left: 0;  
+          transition: all .3s ease;
+         }
+     
+         &:after {
+           right: 0;
+           left: auto;
+         }
+      }
+  
+      &:hover {
+        cursor: pointer;
+  
+        &:before, &:after {
+          background: hsl(0, 0%, 58%);
+        }
+  
+        span {
+          cursor: pointer;
+  
+          &:before, &:after {
+              background: hsl(0, 0%, 58%);
+          }
+        }
+      }
+    } 
+  }
+}
+//********** /HEADER **********//
+
+/*************************************
+********* /PORTFOLIO PAGE *************
+************************************/
+
+
+/*************************************
 ********* T E S T *******************
 ************************************/
 // .test {
@@ -776,3 +903,5 @@
 /*************************************
 ********* T E S T *******************
 ************************************/
+
+

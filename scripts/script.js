@@ -22,18 +22,20 @@ if (winWidth <= 767) {
             navLinks.css("color", "hsl(0, 0%, 0%)");
             $("#logo").attr("src", "./images/logo-dark.svg");
         } else {
-            nav.removeClass("nav-scrolled");
-            navLinks.css("color", "hsl(0, 0%, 100%)");
-            $("#logo").attr("src", "./images/logo-light.svg");
+          //if it's NOT on homepage, make the text black. else make it white -- for pages with white background everywhere
+            if (window.location['pathname'] !== '/index.html' && window.location['pathname'] !== '/') {
+              nav.removeClass("nav-scrolled");
+              navLinks.css("color", "hsl(0, 0%, 0%)");
+              $("#logo").attr("src", "./images/logo-dark.svg");
+            } else {
+              nav.removeClass("nav-scrolled");
+              navLinks.css("color", "hsl(0, 0%, 100%)");
+              $("#logo").attr("src", "./images/logo-light.svg");
+            } 
         }
     });
 }
-
-//if on homepage, scroll to top header when clicking on the logo
-if (window.location['pathname'] === '/index.html' || window.location['pathname'] === '/') {
-  $("#linkClick").attr("href", "#header");
-} 
-//******** navigation on scroll ********/
+//******** /navigation on scroll ********/
 
 $(document).ready(function() {
   //******** mobile menu ********/
@@ -93,7 +95,7 @@ $(document).ready(function() {
   //******** /BEST PROJECTS ********/
 
 
-  //******** carousles ********/
+  //******** carousels ********/
   $("#testimonial").owlCarousel({
     loop:true,
     margin:10,
@@ -130,4 +132,26 @@ $(document).ready(function() {
     }
   });
   //******** /carousels ********/
+  
+  //if on homepage, scroll to top header when clicking on the logo
+  if (window.location['pathname'] === '/index.html' || window.location['pathname'] === '/') {
+    $("#linkClick").attr("href", "#header");
+  } 
+
+  //logo change
+  //--if NOT on homepage, change navigation logo to dark logo
+  if (window.location['pathname'] !== '/index.html' && window.location['pathname'] !== '/') {
+    $("#logo").attr("src", "./images/logo-dark.svg");
+  }
+
+
+
+
+  ///// PORTFOLIO PAGE 
+  //--on click show alert
+  $("#load-more").on("click", function(){
+    alert("Sorry, I have yet to learn how to do this!");
+  });
+  ///// /PORTFOLIO PAGE
+
 });
