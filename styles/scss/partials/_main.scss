@@ -801,9 +801,9 @@
 }
 
 .footer-portfolio {
+  background: #F6F6F6;
   .container {
     grid-column: 1 / span 12;
-    background: #F6F6F6;
   }
 }
 
@@ -888,7 +888,7 @@
     } 
     
     .hidden-page-menu {
-      width: 500px;
+      width: auto;
       height: 50px;
       transform: scale(1);
       position: absolute;
@@ -955,6 +955,7 @@
       display: grid;
       grid-template-columns: 1fr!important;
       grid-gap: 50px;
+      
 
       .blog-article {
         display: flex;
