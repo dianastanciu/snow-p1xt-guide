@@ -159,7 +159,7 @@ $(document).ready(function() {
       element.removeClass("disableAnimation");
     };
     enableAnimation($(".projects-portfolio"));
-    $(".projects-portfolio").toggleClass("slideDownProjects");
+    $(".projects-portfolio").toggleClass("slideDownContent");
     $(".hidden-page-menu").toggleClass("showPageMenu");
     $(".item").toggleClass("cascade1");
   });

@@ -769,7 +769,7 @@
 /*************************************
 ********* PORTFOLIO PAGE *************
 ************************************/
-.header-portfolio {
+.header-general {
   height: 100px;
   background-color: hsl(0, 0%, 100%);
   background-image: none;
@@ -796,7 +796,7 @@
   }
 }
 
-.best-projects-portfolio {
+.main-content-general {
   background: #F6F6F6;
 }
 
@@ -828,7 +828,7 @@
   }
 }
 
-.best-projects-portfolio {
+.main-content-general {
  .container {
    padding-top: 40px;
   .page-menu {
@@ -916,15 +916,15 @@
   }
 }
 
-.slideDownProjectsInit {animation: slideDownProjectsInit 1s forwards;}
+.slideDownContentInit {animation: slideDownContentInit 1s forwards;}
 
-@keyframes slideDownProjectsInit {
+@keyframes slideDownContentInit {
   0% {transform: translateY(60px);}
   100% {transform: translateY(0);}
 }
-.slideDownProjects {animation: slideDownProjects 1s forwards;}
+.slideDownContent {animation: slideDownContent 1s forwards;}
 
-@keyframes slideDownProjects {
+@keyframes slideDownContent {
   0% {transform: translateY(0);}
   100% {transform: translateY(60px);}
 }
@@ -944,6 +944,96 @@
 /*************************************
 ********* /PORTFOLIO PAGE *************
 ************************************/
+
+/*************************************
+********* BLOG PAGE *****************
+************************************/
+.blog-container {
+  .container {
+    grid-column: 3 / span 8;
+    .blog-articles-container {
+      display: grid;
+      grid-template-columns: 1fr!important;
+      grid-gap: 50px;
+
+      .blog-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+        .image {
+          background-image: url("../../images/blog-1.jpg");
+          background-size: cover;
+          background-position: center;
+          height: 450px;
+          position: relative;
+
+          .button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+
+            .btn {
+              padding: 0.4em 1.3em;
+            }
+          }
+          
+
+          &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: hsla(0, 0%, 100%, 0);
+            transition: all 0.5s ease;
+          }
+
+          &:hover {
+            &:before {
+              background: hsla(0, 0%, 100%, 0.2);
+              cursor: pointer;
+            }
+          }
+        }
+
+        .text {
+          background: rgb(255, 255, 255);
+          width: 100%;
+          padding: 10px 30px;
+         
+          .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .title {
+              font-size: 1.7em;
+              color: #222;
+              transition: all 0.5s ease;
+
+              &:hover {
+                cursor: pointer;
+                color: #959595;
+              }
+            }
+
+            .description {
+              text-align: left;
+              font-size: 1em;
+              line-height: 1.7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************************************
+********* /BLOG PAGE ****************
+************************************/
+
 
 
 /*************************************
