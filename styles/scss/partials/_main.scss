@@ -697,7 +697,10 @@
         .text-email-input {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          grid-gap: 10px
+          grid-gap: 10px;
+          input {
+            width: 100%;
+          }
         }
         .textarea-input, .name-input {
           width: 100%;
