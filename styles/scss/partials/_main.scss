@@ -906,6 +906,7 @@
         transform: translateY(-10px); 
         transition: all .3s ease;
         opacity: 0;
+        padding-right: 10px;
 
         &:hover {
           cursor: pointer;
