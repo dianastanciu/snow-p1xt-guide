@@ -1084,10 +1084,86 @@
   }
 }
 
+.prev-next {
+  height: 120px;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #3b3b3b;
+      transition: all .3s ease;
+      &:hover {
+        cursor: pointer;
+        color: #959595;
+      }
+    }
+
+    .page-menu {
+      position: relative;
+      width: 17px;
+      height: 17px;
+    
+       &:before, &:after {
+         content:"";
+         position: absolute;
+         width: 6px;
+         height: 6px;
+         background: hsl(0, 0%, 0%);  
+         top: 0;
+         left: 0;  
+         transition: all .3s ease;
+        }
+    
+        &:after {
+          right: 0;
+          left: auto;
+        }
+    
+        span {
+          &:before, &:after {
+            content:"";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: hsl(0, 0%, 0%);  
+            bottom: 0;
+            left: 0;  
+            transition: all .3s ease;
+           }
+       
+           &:after {
+             right: 0;
+             left: auto;
+           }
+        }
+    
+        &:hover {
+          cursor: pointer;
+    
+          &:before, &:after {
+            background: hsl(0, 0%, 58%);
+          }
+    
+          span {
+            cursor: pointer;
+    
+            &:before, &:after {
+                background: hsl(0, 0%, 58%);
+            }
+          }
+        }
+      } 
+  }
+}
+
+
 /*************************************
 ********* /BLOG SINGLE PAGE *********
 ************************************/
-
 
 
 
