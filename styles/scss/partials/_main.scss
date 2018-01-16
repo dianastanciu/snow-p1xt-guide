@@ -656,7 +656,6 @@
 //********** /BLOG **********//
 //********** CONTACT **********//
 .contact {
-  // * { border: 1px solid rgb(158, 0, 0); } //temp
   height: auto;
   background: #F6F6F6;
   
@@ -666,18 +665,18 @@
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-
+    
     .text-container {
       grid-column: 1 / span 5; 
-
+      
       p {
         line-height: 1.7;
       }
     }
-
+    
     .form-container {
       grid-column: 6 / span 7;
-
+      
       .form {
         display: grid;
         grid-row-gap: 24px;
@@ -691,10 +690,10 @@
           border: none;
           padding: 13px;
           &::placeholder {
-           font-family: $work;
+            font-family: $work;
           }
         }
-
+        
         .text-email-input {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -703,7 +702,7 @@
         .textarea-input, .name-input {
           width: 100%;
         }
-
+        
         .btn {
           border: none; 
           &:hover {
@@ -715,6 +714,52 @@
   }
 }
 //********** /CONTACT **********//
+
+//********** FOOTER **********//
+.footer {
+  // * { border: 1px solid rgb(158, 0, 0); } //temp
+  height: auto;
+
+  .container {
+    .social {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100px;
+      margin-bottom: 15px;
+
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px; 
+        height: 30px;
+        color: #959595;
+        font-size: 18px;
+        transition: all .3s ease;
+        
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+    
+    .copyright {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      height: 100px;
+      border-color: rgb(83, 83, 61);
+
+      p {
+        font-size: 13px;
+        color: #959595;
+      }
+    }
+  }
+}
+//********** /FOOTER **********//
+
 /*************************************
 ********* T E S T *******************
 ************************************/
