@@ -888,7 +888,7 @@
       height: 50px;
       transform: scale(1);
       position: absolute;
-      top: 210px;
+      top: 180px;
       opacity: 0;
       transition: all 1.2s ease;
 
@@ -900,7 +900,13 @@
         font-size: 12px;
         text-transform: uppercase;
         transform: translateY(-10px); 
+        transition: all .3s ease;
         opacity: 0;
+
+        &:hover {
+          cursor: pointer;
+          color: #959595;
+        }
       }
     }
   }
@@ -909,17 +915,18 @@
 .slideDownProjectsInit {animation: slideDownProjectsInit 1s forwards;}
 
 @keyframes slideDownProjectsInit {
-  0% {transform: translateY(100px);}
+  0% {transform: translateY(60px);}
   100% {transform: translateY(0);}
 }
 .slideDownProjects {animation: slideDownProjects 1s forwards;}
 
 @keyframes slideDownProjects {
   0% {transform: translateY(0);}
-  100% {transform: translateY(100px);}
+  100% {transform: translateY(60px);}
 }
 
 .showPageMenu {opacity: 1!important;}
+
 .disableAnimation {animation: none!important;}
 
 //--cascades
