@@ -106,9 +106,9 @@ $(document).ready(function() {
     dots: true, 
     responsive: {
       1000: { items: 5},
-      843: {items: 4},
-      500: {items: 3},
-      0: {items: 2}
+      843: {items: 3},
+      550: {items: 2},
+      0: {items: 1}
     }
   });
 
@@ -118,8 +118,9 @@ $(document).ready(function() {
     nav:true,
     dots: true, 
     responsive: {
-      1000: {items: 3},
-      500: {items: 2},
+      1600: {items: 4},
+      1200: {items: 3},
+      900: {items: 2},
       0: {items: 1}
     }
   });

@@ -294,7 +294,7 @@
     
     .items-container {
       z-index: 3;
-      grid-column: 3 / span 9;
+      grid-column: 3 / span 8;
       height: auto;
       display: grid;
       justify-content: space-around;
@@ -542,6 +542,7 @@
     padding: 50px 0;
     height: auto;
     z-index: 1;
+    grid-column: 3 / span 8;
     
     &:hover {
       cursor: move; /* fallback if grab cursor is unsupported */
@@ -586,7 +587,7 @@
       }
       .item {
         .image {
-          height: 220px;
+          height: 250px;
           background: url('../../images/blog-1.jpg');
           background-size: cover;
           position: relative;
@@ -665,6 +666,7 @@
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-column: 3 / span 9;
     
     .text-container {
       grid-column: 1 / span 5; 
@@ -724,6 +726,7 @@
   height: auto;
 
   .container {
+    z-index: 1;
     .social {
       display: flex;
       align-items: flex-end;
