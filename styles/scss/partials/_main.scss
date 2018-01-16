@@ -769,8 +769,6 @@
 /*************************************
 ********* PORTFOLIO PAGE *************
 ************************************/
-
-//********** HEADER **********//
 .header-portfolio {
   height: 100px;
   background-color: hsl(0, 0%, 100%);
@@ -884,9 +882,53 @@
         }
       }
     } 
+    
+    .hidden-page-menu {
+      width: 500px;
+      height: 50px;
+      transform: scale(1);
+      position: absolute;
+      top: 210px;
+      opacity: 0;
+      transition: all 1.2s ease;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .item {
+        font-size: 12px;
+        text-transform: uppercase;
+        transform: translateY(-10px); 
+        opacity: 0;
+      }
+    }
   }
 }
-//********** /HEADER **********//
+
+.slideDownProjectsInit {animation: slideDownProjectsInit 1s forwards;}
+
+@keyframes slideDownProjectsInit {
+  0% {transform: translateY(100px);}
+  100% {transform: translateY(0);}
+}
+.slideDownProjects {animation: slideDownProjects 1s forwards;}
+
+@keyframes slideDownProjects {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(100px);}
+}
+
+.showPageMenu {opacity: 1!important;}
+.disableAnimation {animation: none!important;}
+
+//--cascades
+.cascade1 {animation: cascade1 1s .3s forwards;}
+
+@keyframes cascade1 {
+  0% {transform: translateY(-10px); opacity: 0;}
+  100% {transform: translateY(0); opacity: 1;}
+}
 
 /*************************************
 ********* /PORTFOLIO PAGE *************

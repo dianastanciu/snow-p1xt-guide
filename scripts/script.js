@@ -152,6 +152,17 @@ $(document).ready(function() {
   $("#load-more").on("click", function(){
     alert("Sorry, I have yet to learn how to do this!");
   });
+
+  //on click page menu
+  $(".page-menu").on("click", function() {
+    const enableAnimation = function (element) {
+      element.removeClass("disableAnimation");
+    };
+    enableAnimation($(".projects-portfolio"));
+    $(".projects-portfolio").toggleClass("slideDownProjects");
+    $(".hidden-page-menu").toggleClass("showPageMenu");
+    $(".item").toggleClass("cascade1");
+  });
   ///// /PORTFOLIO PAGE
 
 });
