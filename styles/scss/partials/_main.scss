@@ -1356,4 +1356,65 @@
 ************************************/
 
 
+/*************************************
+********* PORTFOLIO SINGLE *********
+************************************/
+.image-portfolio {
+    background-image: url("../../images/project-big.jpg");
+    background-size: cover;
+    height: 80vh;
+}
+
+.project {
+  height: auto;
+  background: #F6F6F6;
+  padding: 50px;
+
+  .container {
+    z-index: 1;
+    grid-column: 2 / span 10;
+
+    p {
+      color: #464646;
+    }
+    .project-container {
+      display: flex;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-top: 50px;
+        p {
+          padding: 10px 0;
+          font-size: 1em;
+          line-height: 1.8;
+          .special {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.3em;
+          }
+        }
+      }
+
+      .info {
+        padding-top: 120px;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+
+        p {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+/*************************************
+********* /PORTFOLIO SINGLE *********
+************************************/
+
+
 
