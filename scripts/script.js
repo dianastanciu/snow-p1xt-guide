@@ -105,6 +105,7 @@ $(document).ready(function() {
     autoplay: true,
     autoplayTimeout: 5000,
     autoplayHoverPause: true,
+    autoplaySpeed: 1100,
     navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"]
   });
 
@@ -117,6 +118,7 @@ $(document).ready(function() {
     autoplay: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
+    autoplaySpeed: 500,
     responsive: {
       1000: { items: 5},
       843: {items: 3},
@@ -133,6 +135,7 @@ $(document).ready(function() {
     autoplay: true,
     autoplayTimeout: 6000,
     autoplayHoverPause: true,
+    autoplaySpeed: 900,
     navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"],
     responsive: {
       1600: {items: 4},
