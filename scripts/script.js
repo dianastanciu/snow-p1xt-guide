@@ -101,12 +101,11 @@ $(document).ready(function() {
     margin:10,
     items: 1,
     dots: true,
-    nav: true,
+    nav: false,
     autoplay: true,
     autoplayTimeout: 5000,
     autoplayHoverPause: true,
     autoplaySpeed: 1100,
-    navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"]
   });
 
 
@@ -115,10 +114,6 @@ $(document).ready(function() {
     margin:10,
     items: 5,
     dots: false,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
-    autoplaySpeed: 500,
     responsive: {
       1000: { items: 5},
       843: {items: 3},
@@ -128,15 +123,9 @@ $(document).ready(function() {
   });
 
   $("#blog").owlCarousel({
-    loop:true,
+    loop:false,
     margin:10,
     dots: true,
-    nav: true, 
-    autoplay: true,
-    autoplayTimeout: 6000,
-    autoplayHoverPause: true,
-    autoplaySpeed: 900,
-    navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"],
     responsive: {
       1600: {items: 4},
       1200: {items: 3},
