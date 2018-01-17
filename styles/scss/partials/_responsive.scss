@@ -138,13 +138,19 @@
   .contact {
     .container {
       grid-template-rows: 1fr 1fr;
+      grid-column: 2 / span 10;
+      padding: 50px 0 70px 0;
+
       .text-container {
-        grid-column: 3 / span 9;
+        grid-column: 1 / span 11;
         margin-bottom: 30px;
       }
-
-      .form-container{
+      .form-container {
         grid-column: 1 / span 12;
+        .form {
+          grid-template: initial;
+          justify-content: initial;
+        }
       }
     }
   }
