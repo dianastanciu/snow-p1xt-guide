@@ -1178,6 +1178,79 @@
 }
 
 
+.comments-container {
+  height: auto;
+  background: #F6F6F6;
+  
+  .container {
+    height: auto; 
+    padding-top: 50px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto;
+    grid-column: 3 / span 9;
+    grid-row-gap: 30px;
+
+    .title {
+        font-size: 1.6em;
+        grid-column: 2 / span 10;
+    }
+
+    .text-container {
+      grid-column: 1 / span 5; 
+      
+      p {
+        line-height: 1.7;
+      }
+    }
+    
+    .form-container {
+      grid-column: 1 / span 11;
+      display: grid;
+      grid-template-rows: 60px auto;
+      height: 400px;
+      
+      .form {
+        display: grid;
+        grid-row-gap: 24px;
+        grid-template: 50px auto 30px / 80%;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        
+        input, textarea {
+          font-family: $work;
+          border: none;
+          padding: 13px;
+          &::placeholder {
+            font-family: $work;
+          }
+        }
+        
+        .text-email-input {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 10px;
+          input {
+            width: 100%;
+          }
+        }
+        .textarea-input, .name-input {
+          width: 100%;
+        }
+        
+        .btn {
+          border: none; 
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
 /*************************************
 ********* /BLOG SINGLE PAGE *********
 ************************************/
