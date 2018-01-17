@@ -532,6 +532,21 @@
     }
   }
 }
+
+
+.owl-next {
+  float: right;
+  top: 50%;
+  position: absolute;
+  right: 0;
+}
+
+.owl-prev {
+  float: left;
+  top: 50%;
+  position: absolute;
+  left: 0;
+}
 //********** /TESTIMONIAL **********//
 
 
@@ -651,6 +666,18 @@
         }
       }
     }
+  }
+
+  .owl-theme .owl-nav [class*='owl-'] {
+    color: rgb(0, 0, 0);
+  }
+
+  .owl-prev {
+    left: -50px;
+  }
+
+  .owl-next {
+    right: -50px;
   }
 }
 

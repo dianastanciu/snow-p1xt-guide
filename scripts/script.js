@@ -99,18 +99,17 @@ $(document).ready(function() {
   $("#testimonial").owlCarousel({
     loop:true,
     margin:10,
-    nav:true,
     items: 1,
-    dots: true
+    dots: true,
+    nav: true,
+    navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"]
   });
 
 
   $("#partners").owlCarousel({
     loop:true,
     margin:10,
-    nav:true,
     items: 5,
-    dots: true, 
     responsive: {
       1000: { items: 5},
       843: {items: 3},
@@ -122,8 +121,9 @@ $(document).ready(function() {
   $("#blog").owlCarousel({
     loop:true,
     margin:10,
-    nav:true,
-    dots: true, 
+    dots: true,
+    nav: true, 
+    navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"],
     responsive: {
       1600: {items: 4},
       1200: {items: 3},
@@ -164,5 +164,7 @@ $(document).ready(function() {
     $(".item").toggleClass("cascade1");
   });
   ///// /PORTFOLIO PAGE
+
+
 
 });
