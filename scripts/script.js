@@ -104,7 +104,6 @@ $(document).ready(function() {
     nav: false,
     autoplay: true,
     autoplayTimeout: 5000,
-    autoplayHoverPause: true,
     autoplaySpeed: 1100,
   });
 
@@ -123,9 +122,11 @@ $(document).ready(function() {
   });
 
   $("#blog").owlCarousel({
-    loop:false,
+    loop:true,
     margin:10,
-    dots: true,
+    dots: false,
+    nav: true, 
+    navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"],
     responsive: {
       1600: {items: 4},
       1200: {items: 3},
