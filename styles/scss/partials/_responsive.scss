@@ -132,6 +132,15 @@
 }
 //***/testimonial***//
 
+@media screen and (max-width: 500px) {
+  .blog {
+    .container{
+      .text {
+        width: 100%;
+      }
+    }
+  }
+}
 
 //***contact***//
 @media screen and (max-width: 843px) {
