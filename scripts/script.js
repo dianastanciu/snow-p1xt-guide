@@ -102,6 +102,9 @@ $(document).ready(function() {
     items: 1,
     dots: true,
     nav: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
     navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"]
   });
 
@@ -110,6 +113,10 @@ $(document).ready(function() {
     loop:true,
     margin:10,
     items: 5,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
     responsive: {
       1000: { items: 5},
       843: {items: 3},
@@ -123,6 +130,9 @@ $(document).ready(function() {
     margin:10,
     dots: true,
     nav: true, 
+    autoplay: true,
+    autoplayTimeout: 6000,
+    autoplayHoverPause: true,
     navText: ["<i class='fa fa-arrow-left' aria-hidden='true' style='font-size: 17px;'></i>", "<i class='fa fa-arrow-right' aria-hidden='true' style='font-size: 17px;'></i>"],
     responsive: {
       1600: {items: 4},
