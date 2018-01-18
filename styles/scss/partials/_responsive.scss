@@ -291,3 +291,21 @@
    }
  }
 }
+
+
+@media screen and (max-width: 700px) {
+  .article {
+    .container {
+      grid-column: 1 / span 12;
+
+      .info {
+        display: grid;
+        grid-row-gap: 5px;
+      }
+
+      .text {
+        padding: 10px 0;
+      }
+    }
+  }
+}
