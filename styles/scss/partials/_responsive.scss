@@ -130,6 +130,18 @@
     }
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .testimonial {height: 600px;}
+}
+
+@media screen and (max-width: 999px) {
+  .testimonial {height: 650px;}
+}
+
+@media screen and (max-width: 426px) {
+  .textimonial {height: 800px;}
+}
 //***/testimonial***//
 
 @media screen and (max-width: 500px) {

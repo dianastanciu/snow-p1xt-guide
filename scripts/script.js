@@ -1,3 +1,12 @@
+$(document).scroll(function() {
+  if ($(window).scrollTop()===0) {
+    if (window.location['pathname'] == '/index.html' && window.location['pathname'] == '/' && window.location['pathname'] == '') {
+      nav.removeClass("nav-scrolled");
+      logoColor("light");
+    }
+  } 
+})
+
 $(document).ready(function() {
   // **************************** //
   // navigation styles on scroll //
@@ -38,6 +47,8 @@ $(document).ready(function() {
                 logoColor("dark");
               } 
           }
+
+
       });
   }
 
@@ -111,6 +122,7 @@ $(document).ready(function() {
     loop:true,
     margin:10,
     items: 5,
+    dots: false,
     responsive: {
       1000: { items: 5},
       843: {items: 3},
