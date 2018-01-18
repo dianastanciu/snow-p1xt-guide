@@ -136,17 +136,14 @@ $(document).ready(function() {
   });
   //******** /carousels ********/
   
-  //if on homepage, scroll to top header when clicking on the logo
-  if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/') {
-    $("#linkClick").attr("href", "#header");
-  } 
-
-  //logo change
-  //--if on homepage, change navigation logo to light logo
-  if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/') {
+  //if on homepage
+  if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/' || window.location['pathname'] == '') {
+    //change navigation logo to light logo
     $("#logo").attr("src", "./images/logo-light.svg");
-  } else {
-    //--if NOT on homepage, change navigation logo to dark logo 
+    //scroll to top header when clicking on the logo
+    $("#linkClick").attr("href", "#header");
+  } else if (window.location['pathname'] !== '/index.html' || window.location['pathname'] !== '/' || window.location['pathname'] !== ''){
+    //change navigation logo to dark logo 
     $("#logo").attr("src", "./images/logo-dark.svg");
   }
 
