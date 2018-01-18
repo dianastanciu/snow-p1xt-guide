@@ -64,6 +64,16 @@
   }
 }
 
+
+@media screen and (max-height: 600px) {
+  .header {
+    height: 700px;
+
+    .header__contents{
+      padding-top: 130px;
+    }
+  }
+}
 //***/header***//
 
 //***best projects***//
