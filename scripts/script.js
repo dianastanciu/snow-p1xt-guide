@@ -142,7 +142,7 @@ $(document).ready(function() {
   } 
 
   //logo change
-  //--if on homepage, change navigation logo to dark logo
+  //--if on homepage, change navigation logo to light logo
   if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/') {
     $("#logo").attr("src", "./images/logo-light.svg");
   } else {
