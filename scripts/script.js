@@ -1,12 +1,3 @@
-$(document).scroll(function() {
-  if ($(window).scrollTop()===0) {
-    if (window.location['pathname'] == '/index.html' && window.location['pathname'] == '/' && window.location['pathname'] == '') {
-      nav.removeClass("nav-scrolled");
-      logoColor("light");
-    }
-  } 
-})
-
 $(document).ready(function() {
   // **************************** //
   // navigation styles on scroll //
