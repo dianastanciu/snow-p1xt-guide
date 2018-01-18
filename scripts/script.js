@@ -89,6 +89,8 @@ $(document).ready(function() {
   for (var i = 1; i < 10; i++) {
     $(".project-item" + i).on("mouseenter", function() {
       $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle-r show-hidden-title-subtitle");
+      enableAnimation($(this).find(".hidden-title, .hidden-subtitle"));
+
     });
 
     $(".project-item" + i).on("mouseleave", function() {
