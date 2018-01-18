@@ -308,4 +308,24 @@
       }
     }
   }
+
+  .leave-comments-container {
+    .container {
+      grid-column: 1 / span 12;
+
+      .title {
+        grid-column: 3 / span 10;
+      }
+      .form-container {
+        margin-left: -25px;
+        grid-column: 3 / span 10;
+      }
+    }
+  }
+
+  .comments-container {
+    .container {
+      grid-column: 1 / span 11;
+    }
+  }
 }
