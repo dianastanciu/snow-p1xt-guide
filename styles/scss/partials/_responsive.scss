@@ -154,6 +154,16 @@
   }
 }
 
+/*blog section*/
+@media screen and (max-width:899px) {
+  .blog {
+    .container {
+      grid-column: 3 / span 8;
+      padding: 20px 0 0 0;
+    }
+  }
+}
+
 //***contact***//
 @media screen and (max-width: 843px) {
   .contact {
