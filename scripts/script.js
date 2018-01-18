@@ -1,118 +1,116 @@
-//******** navigation on scroll ********/
-const nav = $(".navigation");
-const burgerLines = $(".header .container .navigation .burger-container .burger > div");
-const navLinks = $(".header > .container > .navigation > .links > .link > a");
-const winWidth = $(window).width();
-if (winWidth <= 767) {
-    $(window).scroll(function() {
-        if ($(this).scrollTop()>180) {
-            nav.addClass("nav-scrolled");
-            burgerLines.css("background", "hsl(0, 0%, 0%)");
-            $("#logo").attr("src", "./images/logo-dark.svg");
-          } else {
-            nav.removeClass("nav-scrolled");
-            burgerLines.css("background", "hsl(0, 0%, 100%)");
-            $("#logo").attr("src", "./images/logo-light.svg");
-          }
-    });
-} else if (winWidth >= 768) {
-    $(window).scroll(function() {
-        if ($(this).scrollTop()>65) {
-            nav.addClass("nav-scrolled");
-            navLinks.css("color", "hsl(0, 0%, 0%)");
-            $("#logo").attr("src", "./images/logo-dark.svg");
-        } else {
-          //if it's NOT on homepage, make the text black. else make it white -- for pages with white background everywhere
-            if (window.location['pathname'] !== '/index.html' && window.location['pathname'] !== '/') {
-              nav.removeClass("nav-scrolled");
-              navLinks.css("color", "hsl(0, 0%, 0%)");
-              $("#logo").attr("src", "./images/logo-dark.svg");
+$(document).ready(function() {
+  // **************************** //
+  // navigation styles on scroll //
+  // ************************* //
+  let winWidth = $(window).width();
+  let nav = $(".navigation");
+
+  let logoColor = function(e) {
+    $("#logo").attr("src", "./images/logo-" + e + ".svg");  
+  };
+  let enableAnimation = function(em) {
+      em.removeClass("disableAnimation");
+  };
+
+
+  if (winWidth <= 767) {
+      $(window).scroll(function() {
+          if ($(this).scrollTop()>100) {
+              nav.addClass("nav-scrolled");
+              logoColor("dark");
             } else {
               nav.removeClass("nav-scrolled");
-              navLinks.css("color", "hsl(0, 0%, 100%)");
-              $("#logo").attr("src", "./images/logo-light.svg");
-            } 
-        }
-    });
-}
-//******** /navigation on scroll ********/
+              logoColor("light");
+            }
+      });
+  } else if (winWidth >= 768) {
+      $(window).scroll(function() {
+          if ($(this).scrollTop()>10) {
+              nav.addClass("nav-scrolled");
+              logoColor("dark");
+          } else {
+            //if on homepage, make the text black. else make it white -- for pages with white background everywhere
+              if (window.location['pathname'] == '/index.html' && window.location['pathname'] == '/' && window.location['pathname'] == '') {
+                nav.removeClass("nav-scrolled");
+                logoColor("light");
+              } else {
+                nav.removeClass("nav-scrolled");
+                logoColor("dark");
+              } 
+          }
+      });
+  }
 
-$(document).ready(function() {
-  //******** mobile menu ********/
+  // **************************** //
+  // ******* mobile menu ******* //
+  // ************************* //
   $(".burger-container").on("click", function() {
     $(".burger").toggleClass("burger-x");
     $(".hidden-menu").toggleClass("hide-hidden-menu").toggleClass("show-hidden-menu");
     $("body").toggleClass("hide-scroll-body");
     
     nav.toggleClass("nav-scrolled");
-    burgerLines.css("background", "hsl(0, 0%, 100%)");
-    $("#logo").attr("src", "./images/logo-light.svg");
+    logoColor("light");
     
     if (nav.hasClass("nav-scrolled")) {
       nav.toggleClass("nav-scrolled");
-      burgerLines.css("background", "hsl(0, 0%, 0%)");
     } 
   });
-  //******** /mobile menu ********/
 
-
-  //******** smooth scrolling ********/
-    // handle links with @href started with '#' only
-      $(document).on('click', 'a[href^="#"]', function(e) {
+  // **************************** //
+  // ****** smooth scroll ****** //
+  // ************************* //
+  // handle links with @href started with '#' only
+  $(document).on('click', 'a[href^="#"]', function(e) {
     // target element id
-      var id = $(this).attr('href');
+    var id = $(this).attr('href');
 
     // target element
-      var $id = $(id);
-      if ($id.length === 0) {
-          return;
-      }
+    var $id = $(id);
+    if ($id.length === 0) {
+        return;
+    }
 
     // prevent standard hash navigation (avoid blinking in IE)
-      e.preventDefault();
+    e.preventDefault();
 
     // top position relative to the document
-      var pos = $id.offset().top;
+    var pos = $id.offset().top;
 
     // animated top scrolling
-      $('body, html').animate({scrollTop: pos});
-    });
-  //******** /smooth scrolling ********/
-  
+    $('body, html').animate({scrollTop: pos});
+  });
 
-  //******** BEST PROJECTS ********/
+  // **************************** //
+  // *portfolio projects hover* //
+  // ************************* //
   for (var i = 1; i < 10; i++) {
-    //---------mouseenter
     $(".project-item" + i).on("mouseenter", function() {
-        $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle-r show-hidden-title-subtitle");
+      $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle-r show-hidden-title-subtitle");
     });
 
-    //---------mouseleave
     $(".project-item" + i).on("mouseleave", function() {
-        $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle show-hidden-title-subtitle-r");
+      $(this).find(".hidden-title, .hidden-subtitle").toggleClass("show-hidden-title-subtitle show-hidden-title-subtitle-r");
     });
   }
-  //******** /BEST PROJECTS ********/
 
-
-  //******** carousels ********/
+  // **************************** //
+  // ******** carousels ******** //
+  // ************************* //
   $("#testimonial").owlCarousel({
     loop:true,
     margin:10,
     items: 1,
     dots: true,
-    nav: false,
     autoplay: true,
     autoplayTimeout: 5000,
     autoplaySpeed: 1100,
   });
 
-
   $("#partners").owlCarousel({
     loop:true,
     margin:10,
     items: 5,
-    dots: false,
     responsive: {
       1000: { items: 5},
       843: {items: 3},
@@ -134,40 +132,31 @@ $(document).ready(function() {
       0: {items: 1}
     }
   });
-  //******** /carousels ********/
-  
-  //if on homepage
+    
+  // **************************** //
+  // **** logo color & href **** //
+  // ************************* //
   if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/' || window.location['pathname'] == '') {
-    //change navigation logo to light logo
-    $("#logo").attr("src", "./images/logo-light.svg");
-    //scroll to top header when clicking on the logo
-    $("#linkClick").attr("href", "#header");
+    logoColor("light");
+    $("#linkClick").attr("href", "#header"); //scroll to top header when clicking on the logo
   } else if (window.location['pathname'] !== '/index.html' || window.location['pathname'] !== '/' || window.location['pathname'] !== ''){
-    //change navigation logo to dark logo 
-    $("#logo").attr("src", "./images/logo-dark.svg");
+    logoColor("dark");
   }
 
-
-
-
-  ///// PORTFOLIO PAGE 
-  //--on click show alert
+  // **************************** //
+  // **** load more button **** //
+  // ************************* //
   $("#load-more").on("click", function(){
     alert("Sorry, I have yet to learn how to do this!");
   });
 
-  //on click page menu
+  // **************************** //
+  // **** page menu button **** //
+  // ************************* //
   $(".page-menu").on("click", function() {
-    const enableAnimation = function (element) {
-      element.removeClass("disableAnimation");
-    };
     enableAnimation($(".projects-portfolio"));
     $(".projects-portfolio").toggleClass("slideDownContent");
     $(".hidden-page-menu").toggleClass("showPageMenu");
     $(".item").toggleClass("cascade1");
   });
-  ///// /PORTFOLIO PAGE
-
-
-
 });
