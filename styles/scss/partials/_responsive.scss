@@ -271,7 +271,23 @@
 
 
 @media screen and (max-width: 400px) {
-  .main-content-general .container .hidden-page-menu  {
-    display: grid;
-  }
+  .main-content-general .container .hidden-page-menu  {display: grid;}
+}
+
+@media screen and (max-width: 1175px) {
+ .project {
+   .container {
+    grid-column: 1 / span 12;
+
+    .project-container {
+      flex-direction: column;
+   
+      .info {
+       padding-top: 25px!important;
+       padding-left: 0!important;
+       width: auto!important;
+      }
+    } 
+   }
+ }
 }
