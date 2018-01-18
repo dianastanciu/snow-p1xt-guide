@@ -73,6 +73,10 @@
       padding-top: 130px;
     }
   }
+
+  .main-content-general {
+    height: auto;
+  }
 }
 //***/header***//
 
@@ -264,3 +268,10 @@
 /*************************************
 ********* /BLOG PAGE ****************
 ************************************/
+
+
+@media screen and (max-width: 400px) {
+  .main-content-general .container .hidden-page-menu  {
+    display: grid;
+  }
+}

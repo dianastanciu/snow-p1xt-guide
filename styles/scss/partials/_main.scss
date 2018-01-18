@@ -821,7 +821,7 @@
 ********* PORTFOLIO PAGE *************
 ************************************/
 .header-general {
-  height: 100px;
+  height: 100px!important;
   background-color: hsl(0, 0%, 100%);
   background-image: none;
 
@@ -971,14 +971,14 @@
 .slideDownContentInit {animation: slideDownContentInit 1s forwards;}
 
 @keyframes slideDownContentInit {
-  0% {transform: translateY(60px);}
+  0% {transform: translateY(100px);}
   100% {transform: translateY(0);}
 }
 .slideDownContent {animation: slideDownContent 1s forwards;}
 
 @keyframes slideDownContent {
   0% {transform: translateY(0);}
-  100% {transform: translateY(60px);}
+  100% {transform: translateY(100px);}
 }
 
 .showPageMenu {opacity: 1!important;}
