@@ -142,8 +142,11 @@ $(document).ready(function() {
   } 
 
   //logo change
-  //--if NOT on homepage, change navigation logo to dark logo
-  if (window.location['pathname'] !== '/index.html' && window.location['pathname'] !== '/') {
+  //--if on homepage, change navigation logo to dark logo
+  if (window.location['pathname'] == '/index.html' || window.location['pathname'] == '/') {
+    $("#logo").attr("src", "./images/logo-light.svg");
+  } else {
+    //--if NOT on homepage, change navigation logo to dark logo 
     $("#logo").attr("src", "./images/logo-dark.svg");
   }
 
