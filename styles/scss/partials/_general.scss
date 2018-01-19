@@ -18,23 +18,22 @@
   z-index: 999;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
- .links {
-   .link {
-    a {
-      color: hsl(0, 0%, 0%)!important;
+  .links {
+    .link {
+      a {
+        color: hsl(0, 0%, 0%)!important;
+      }
     }
-   }
- }
+  }
 
- .burger-container {
-   .burger {
-     .line {
-      background: hsl(0, 0%, 0%)!important;
-     }
-   }
- }
+  .burger-container {
+    .burger {
+        div {
+          background: hsl(0, 0%, 0%)!important;
+      }
+    }
+  }
 }
-
 
 .white-bg {
   background: hsl(0, 0%, 100%);

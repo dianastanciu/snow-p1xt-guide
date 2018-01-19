@@ -27,6 +27,7 @@ $(document).ready(function() {
       $(window).scroll(function() {
           if ($(this).scrollTop()>10) {
               nav.addClass("nav-scrolled");
+              $(".burger-container > .burger > div").css("background", "#000");
               logoColor("dark");
           } else {
             //if on homepage, make the text black. else make it white -- for pages with white background everywhere
@@ -35,6 +36,7 @@ $(document).ready(function() {
                 logoColor("light");
               } else {
                 nav.removeClass("nav-scrolled");
+                $(".burger-container > .burger > div").css("background", "#000");
                 logoColor("dark");
               } 
           }
