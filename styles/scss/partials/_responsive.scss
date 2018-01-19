@@ -293,7 +293,7 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .article {
     .container {
       grid-column: 1 / span 12;
@@ -326,6 +326,63 @@
   .comments-container {
     .container {
       grid-column: 1 / span 11;
+    }
+  }
+}
+
+
+//blog single comment section
+@media screen and (max-width: 888px) {
+  .comments-container {
+    .container {
+      .title {
+        padding-left: 15px;
+      }
+      .comments-section {
+        .single-comment {
+
+          .picture, .text {
+            padding: 10px 0;
+          }
+
+          .picture {
+            align-items: center;
+            padding-left: 15px;
+              img {
+                width: 80px; 
+                height: 80px;
+              }
+            
+          }
+          .text {
+            padding-left: 15px;
+            
+            .top {
+              align-items: center;
+            }
+            .bottom {
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 570px) {
+  .comments-container {
+    .container {
+      .comments-section {
+        .single-comment {
+          flex-direction: column;
+        }
+
+        .single-comment-two {
+          margin: auto;
+        }
+      }
     }
   }
 }
