@@ -1,0 +1,19 @@
+// BASE
+
+// A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudo-classes. It doesn’t include any class or ID selectors.
+//
+// Base styles include setting heading sizes, default link styles, default font styles, and body backgrounds. There should be no need to use !important in a Base style.
+
+body {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif !important;
+  overflow-x: hidden;
+}
+
+a {
+  transition: all .3s ease;
+
+  @include hover {
+    text-decoration: none !important;
+  }
+}

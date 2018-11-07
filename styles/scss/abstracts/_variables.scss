@@ -1,0 +1,33 @@
+// Breakpoints
+$sm-width: 576px;
+$md-width:  768px;
+$lg-width: 992px;
+$xl-width: 1200px;
+
+// Colors
+//--
+
+// Fonts
+$font-xs: .625em; //10px
+$font-sm: .813em; //13px
+$font-regular: 1em; //16px
+$font-lg: 1.188em; //19px
+$font-xl: 1.375em; //22px
+$font-xxl: 1.563em; //25px
+
+
+//family:
+$play: 'Playfair Display', serif;
+$work: 'Work Sans', sans-serif;
+
+//weight:
+$font-weight-sm: 400;
+$font-weight-regular: 500;
+$font-weight-lg: 700;
+
+// General
+$font-size-text: $font-xs;
+$font-size-subtitle: $font-sm;
+$font-size-regular: $font-regular;
+$font-size-title-large: $font-lg;
+$font-size-title-big: $font-xxl;

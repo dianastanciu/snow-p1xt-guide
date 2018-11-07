@@ -1,0 +1,24 @@
+@keyframes show-hidden-title-subtitle {
+  0% {transform: translateY(15px); opacity: 0;}
+  100% {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes show-hidden-title-subtitle-r {
+  0% {transform: translateY(0); opacity: 1;}
+  100% {transform: translateY(15px); opacity: 0;}
+}
+
+@keyframes slideDownContentInit {
+  0% {transform: translateY(100px);}
+  100% {transform: translateY(0);}
+}
+
+@keyframes slideDownContent {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(100px);}
+}
+
+@keyframes cascade1 {
+  0% {transform: translateY(-10px); opacity: 0;}
+  100% {transform: translateY(0); opacity: 1;}
+}

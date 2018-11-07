@@ -5,8 +5,8 @@
   text-transform: uppercase;
   transition: all .3s ease;
   font: {
-    size: $btn-font-size;
-    weight: $btn-font-weight;
+    size: $font-size-text;
+    weight: $font-weight-regular;
   }
 
   &:hover {

@@ -1,10 +1,12 @@
-//********** HEADER **********//
 .header {
   background: url('../../images/header.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
-  
+
+  @include max($md-width) {
+    height: 700px;
+  }
 
   &:before {
     content: "";
@@ -28,6 +30,11 @@
       width: 100%;
       left: 0;
 
+      @include max($lg-width) {
+        grid-template-columns: 150px auto;
+        z-index: 4;
+      }
+
       .logo {
         display: grid;
         align-items: center;
@@ -38,9 +45,20 @@
         }
       }
 
+      .blank {
+        @include max($lg-width) {
+          display: none;
+        }
+      }
+
+
       .links {
         display: flex;
         justify-content: space-around;
+
+        @include max($lg-width) {
+          display: none;
+        }
 
         .link {
           a {
@@ -51,8 +69,8 @@
             text-transform: uppercase;
             transition: all .3s ease;
             font: {
-              size: $nav__font-size;
-              weight: $nav__font-weight;
+              size: $font-size-text;
+              weight: $font-weight-regular;
             }
 
             &:hover {color: hsla(0, 0%, 100%, 1);}
@@ -66,6 +84,11 @@
         align-items: center;
         padding-right: 10px;
         z-index: 4;
+
+        @include max($lg-width) {
+          display: grid;
+        }
+
 
         .burger {
           width: 35px;
@@ -111,8 +134,8 @@
           a {
             font: {
               family: $play;
-              size: $nav__hidden-menu-font-size;
-              weight: $nav__hidden-menu-font-weight;
+              size: $font-size-text;
+              weight: $font-weight-regular;
             }
             color: hsla(0, 0%, 100%, 0.8);
             transition: all .3s ease;
@@ -138,7 +161,7 @@
           i {
             color: hsla(0, 0%, 100%, 0.8);
             transition: all .3s ease;
-            font-size: $nav__hidden-menu-font-size;
+            font-size: $font-size-text;
 
             &:hover {color: hsla(0, 0%, 100%, 1);}
           }
@@ -156,6 +179,10 @@
       width: 100%;
       text-align: center;
 
+      @include max($md-width) {
+          padding-top: 130px;
+      }
+
       .title-header, .subtitle {
         color: #fff;
       }
@@ -163,13 +190,13 @@
       .title-header {
         h1, h2 {
           font: {
-            size: $header__title-font-size;
-            weight: $header__title-font-weight;
+            size: $font-size-title-big;
+            weight: $font-weight-regular;
           }
           line-height: 1.2em;
         }
         h1 {
-          font-weight: $header__title-big-font-weight;
+          font-weight: $font-weight-lg;
         }
         h2 {
           font-style: italic;
@@ -179,8 +206,8 @@
       .subtitle {
         margin-bottom: 1.3125em;
         font: {
-          size: $header__subtitle-font-size;
-          weight: $header__subtitle-font-weight;
+          size: $font-size-title-big;
+          weight: $font-weight-regular;
         }
         text-transform: uppercase;
         line-height: 1em;
@@ -214,39 +241,6 @@
   }
 }
 
-//hide hidden menu
-.hide-hidden-menu {
-  display: none;
-  opacity: 0;
-}
-
-//show hidden menu
-.show-hidden-menu {
-  display: grid;
-  opacity: 1;
-}
-
-//hide scroll on body
-.hide-scroll-body {
-  overflow: hidden;
-}
-
-//burger x
-.burger-x {
-  .line1 {
-    transform: rotate(43deg) translate(8px, 8px);
-  }
-  .line2 {
-    transform: scale(0);
-  }
-  .line3 {
-    transform: rotate(-43deg) translate(8px, -8px);
-  }
-}
-//********** /HEADER **********//
-
-
-//********** ABOUT **********//
 .about {
   padding-top: 150px;
   height: auto;
@@ -261,15 +255,17 @@
       text-align: center;
       width: 60%;
 
+      @include max($lg-width) {
+          width: 80%;
+      }
+
       img {
         max-height: 150px;
       }
     }
   }
 }
-//********** /ABOUT **********//
 
-//********** FEATURES **********//
 .features {
   height: auto;
   .container {
@@ -289,9 +285,9 @@
       height: 100%;
       left: 0;
       top: 0;
-      background: rgba(66, 66, 66, 0.281);      
+      background: rgba(66, 66, 66, 0.281);
     }
-    
+
     .items-container {
       z-index: 3;
       grid-column: 3 / span 8;
@@ -300,30 +296,30 @@
       justify-content: space-around;
       grid-template-columns: repeat(auto-fit, 210px);
       grid-gap: 30px;
-      
+
       .item {
         color: white;
         display: flex;
-        
+
         .icon {
           display: flex;
           align-items: center;
-          
+
           i {
             font-size: 3em;
           }
         }
-        
+
         .text {
           padding-left: 10px;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          
+
           .title-features {
             font-size: 1.3em;
           }
-          
+
           .subtitle {
             font-size: 0.9em;
           }
@@ -333,9 +329,6 @@
   }
 }
 
-//********** /FEATURES **********//
-
-//********** BEST PROJECTS **********//
 .best-projects {
   height: auto;
   overflow: hidden;
@@ -366,6 +359,22 @@
       grid-template-columns: repeat(auto-fill, 300px);
       justify-content: center;
 
+      @include min($xl-width) {
+        grid-template-columns: repeat(3, 400px);
+      }
+
+      @include max($xl-width) {
+        grid-template-columns: repeat(2, 400px);
+      }
+
+      @include max($lg-width) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      @include max($sm-width) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
       .project-item1 {background-image: url("../../images/project-1.jpg");}
       .project-item2 {background-image: url("../../images/project-2.jpg");}
       .project-item3 {background-image: url("../../images/project-3.jpg");}
@@ -378,12 +387,17 @@
 
       .project-item {
         margin: 0;
-        height: 300px;
+        height: 400px;
         background-size: cover;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+
+
+        @include max($sm-width) {
+          height: 250px;
+        }
 
         &:before {
           content: "";
@@ -415,7 +429,7 @@
             font: {
               family: $play;
               size: 1.7em;
-              weight: $bold-weight;
+              weight: $font-weight-lg;
             }
             color: #fff;
           }
@@ -426,7 +440,7 @@
             font: {
               family: $work;
               size: 0.9em;
-              weight: $bold-weight;
+              weight: $font-weight-lg;
             }
             text-transform: uppercase;
             color: #fff;
@@ -438,29 +452,19 @@
   }
 }
 
-.show-hidden-title-subtitle {
-  animation: show-hidden-title-subtitle .5s forwards;
-}
-
-@keyframes show-hidden-title-subtitle {
-  0% {transform: translateY(15px); opacity: 0;}
-  100% {transform: translateY(0); opacity: 1;}
-}
-
-.show-hidden-title-subtitle-r {
-  animation: show-hidden-title-subtitle-r .5s forwards;
-}
-@keyframes show-hidden-title-subtitle-r {
-  0% {transform: translateY(0); opacity: 1;}
-  100% {transform: translateY(15px); opacity: 0;}
-}
-//********** /BEST PROJECTS **********//
-
-
-//********** TESTIMONIAL **********//
 .testimonial {
   height: auto;
-  
+
+  @include min($lg-width) {
+    height: 600px;
+  }
+  @include max($lg-width) {
+    height: 650px;
+  }
+  @include max($sm-width) {
+    height: 800px;
+  }
+
   .container {
     z-index: 1;
     margin: 0;
@@ -472,7 +476,7 @@
     color: #fff;
     align-items: center;
     position: relative;
-    
+
     &:before {
       position: absolute;
       content: "";
@@ -480,45 +484,45 @@
       height: 100%;
       left: 0;
       top: 0;
-      background: rgba(66, 66, 66, 0.4);      
+      background: rgba(66, 66, 66, 0.4);
     }
-    
+
     .owl-carousel {
       grid-column: 1 / span 12;
     }
     .owl-stage {
       display: flex;
     }
-    
+
     .item {
       padding: 0 15%;
       text-align: center;
-      
+
       &:hover {
         cursor: move; /* fallback if grab cursor is unsupported */
         cursor: grab;
         cursor: -moz-grab;
         cursor: -webkit-grab;
       }
-      
+
       .testimonial-title {
         font: {
           size: 1.6em;
           family: $play;
           style: italic;
         }
-        
+
         &:before {
           content: open-quote;
           font-size: 1.5em;
         }
-        
+
         &:after {
           content: close-quote;
           font-size: 1.5em;
         }
       }
-      
+
       .testimonial-name {
         margin-top: 30px;
         font: {
@@ -531,7 +535,6 @@
   }
 }
 
-//temporarily using !important
 .owl-dots {
   display: flex;
   align-items: center;
@@ -564,41 +567,36 @@
 }
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-  width: 10px!important; 
+  width: 10px!important;
   height: 10px!important;
   transition: all .3s ease;
   background: rgb(255, 255, 255)!important;
 }
-// /temporarily using !important
 
-//********** /TESTIMONIAL **********//
-
-
-//********** PARTNERS **********//
 .partners {
   height: auto;
-  .container {  
+  .container {
     padding: 50px 0;
     height: auto;
     z-index: 1;
     grid-column: 3 / span 8;
-    
+
+    @include max($sm-width) {
+      padding: 80px 0 50px;
+    }
     &:hover {
       cursor: move; /* fallback if grab cursor is unsupported */
       cursor: grab;
       cursor: -moz-grab;
       cursor: -webkit-grab;
     }
-    
+
     .item {
       img {max-height: 100%;}
     }
   }
 }
-//********** /PARTNERS **********//
 
-
-//********** BLOG **********//
 .blog {
   height: auto;
   background: hsl(0, 0%, 98%);
@@ -611,12 +609,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include max($md-width) {
+      grid-column: 3 / span 8;
+      padding: 20px 0 0 0;
+    }
+
     .text {
       text-align: center;
       margin-bottom: 20px;
       width: 70%;
+
+      @include max($sm-width) {
+        width: 100%;
+      }
     }
-    
+
     #blog {
       &:hover {
         cursor: move; /* fallback if grab cursor is unsupported */
@@ -630,7 +638,7 @@
           background: url('../../images/blog-1.jpg');
           background-size: cover;
           position: relative;
-          
+
           &:before {
             content: "";
             position: absolute;
@@ -639,14 +647,14 @@
             background: hsla(0, 0%, 100%, 0);
             transition: all 0.3s ease;
           }
-          
+
           &:hover {
             cursor: pointer;
             &:before {
               background: hsla(0, 0%, 100%, 0.2);
             }
           }
-          
+
           .button{
             position: absolute;
             bottom: 5px;
@@ -656,16 +664,16 @@
             }
           }
         }
-        
+
         .text {
           background: rgb(255, 255, 255);
           padding: 10px 0;
           width: auto;
-          
+
           .text-container {
             padding: 30px 20px 0;
             text-align: left;
-            
+
             .title {
               font-size: 1.2em;
               text-transform: capitalize;
@@ -675,13 +683,13 @@
                 cursor: pointer;
               }
             }
-            
+
             .date {
               text-transform: uppercase;
               font-size: 0.8em;
               margin-top: 1em;
             }
-            
+
             .description {
               font-size: 0.9em;
               margin-top: 1em;
@@ -705,31 +713,44 @@
   }
 }
 
-//********** /BLOG **********//
-//********** CONTACT **********//
 .contact {
   height: auto;
   background: #F6F6F6;
-  
+
   .container {
-    height: auto; 
+    height: auto;
     padding: 150px 0 70px 0;
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 3 / span 9;
-    
+
+    @include max($lg-width) {
+      grid-template-rows: 1fr 1fr;
+      grid-column: 2 / span 10;
+      padding: 50px 0 70px 0;
+    }
+
     .text-container {
-      grid-column: 1 / span 5; 
-      
+      grid-column: 1 / span 5;
+
+      @include max($lg-width) {
+        grid-column: 1 / span 11;
+        margin-bottom: 30px;
+      }
+
       p {
         line-height: 1.7;
       }
     }
-    
+
     .form-container {
       grid-column: 6 / span 7;
-      
+
+      @include max($lg-width) {
+        grid-column: 1 / span 12;
+      }
+
       .form {
         display: grid;
         grid-row-gap: 24px;
@@ -737,7 +758,12 @@
         justify-content: space-evenly;
         align-items: center;
         height: 100%;
-        
+
+        @include max($lg-width) {
+          grid-template: initial;
+          justify-content: initial;
+        }
+
         input, textarea {
           font-family: $work;
           border: none;
@@ -746,7 +772,7 @@
             font-family: $work;
           }
         }
-        
+
         .text-email-input {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -758,9 +784,9 @@
         .textarea-input, .name-input {
           width: 100%;
         }
-        
+
         .btn {
-          border: none; 
+          border: none;
           &:hover {
             cursor: pointer;
           }
@@ -769,9 +795,7 @@
     }
   }
 }
-//********** /CONTACT **********//
 
-//********** FOOTER **********//
 .footer {
   // * { border: 1px solid rgb(158, 0, 0); } //temp
   height: auto;
@@ -789,18 +813,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30px; 
+        width: 30px;
         height: 30px;
         color: #959595;
         font-size: 18px;
         transition: all .3s ease;
-        
+
         &:hover {
           color: #000;
         }
       }
     }
-    
+
     .copyright {
       display: flex;
       align-content: center;
@@ -815,11 +839,7 @@
     }
   }
 }
-//********** /FOOTER **********//
 
-/*************************************
-********* PORTFOLIO PAGE *************
-************************************/
 .header-general {
   height: 100px!important;
   background-color: hsl(0, 0%, 100%);
@@ -849,6 +869,16 @@
 
 .main-content-general {
   background: #F6F6F6;
+
+  @include max($md-width) {
+    height: auto;
+  }
+
+  .container .hidden-page-menu  {
+    @include max($md-width) {
+      display: grid;
+    }
+  }
 }
 
 .footer-portfolio {
@@ -880,64 +910,64 @@
 }
 
 .main-content-general {
- .container {
-   padding-top: 40px;
-  .page-menu {
-    position: relative;
-    width: 17px;
-    height: 17px;
-  
-     &:before, &:after {
-       content:"";
-       position: absolute;
-       width: 6px;
-       height: 6px;
-       background: hsl(0, 0%, 0%);  
-       top: 0;
-       left: 0;  
-       transition: all .3s ease;
+  .container {
+    padding-top: 40px;
+    .page-menu {
+      position: relative;
+      width: 17px;
+      height: 17px;
+
+      &:before, &:after {
+        content:"";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: hsl(0, 0%, 0%);
+        top: 0;
+        left: 0;
+        transition: all .3s ease;
       }
-  
+
       &:after {
         right: 0;
         left: auto;
       }
-  
+
       span {
         &:before, &:after {
           content:"";
           position: absolute;
           width: 6px;
           height: 6px;
-          background: hsl(0, 0%, 0%);  
+          background: hsl(0, 0%, 0%);
           bottom: 0;
-          left: 0;  
+          left: 0;
           transition: all .3s ease;
-         }
-     
-         &:after {
-           right: 0;
-           left: auto;
-         }
+        }
+
+        &:after {
+          right: 0;
+          left: auto;
+        }
       }
-  
+
       &:hover {
         cursor: pointer;
-  
+
         &:before, &:after {
           background: hsl(0, 0%, 58%);
         }
-  
+
         span {
           cursor: pointer;
-  
+
           &:before, &:after {
-              background: hsl(0, 0%, 58%);
+            background: hsl(0, 0%, 58%);
           }
         }
       }
-    } 
-    
+    }
+
     .hidden-page-menu {
       width: auto;
       height: 50px;
@@ -954,7 +984,7 @@
       .item {
         font-size: 12px;
         text-transform: uppercase;
-        transform: translateY(-10px); 
+        transform: translateY(-10px);
         transition: all .3s ease;
         opacity: 0;
         padding-right: 10px;
@@ -968,46 +998,34 @@
   }
 }
 
-.slideDownContentInit {animation: slideDownContentInit 1s forwards;}
-
-@keyframes slideDownContentInit {
-  0% {transform: translateY(100px);}
-  100% {transform: translateY(0);}
-}
-.slideDownContent {animation: slideDownContent 1s forwards;}
-
-@keyframes slideDownContent {
-  0% {transform: translateY(0);}
-  100% {transform: translateY(100px);}
-}
-
-.showPageMenu {opacity: 1!important;}
-
-.disableAnimation {animation: none!important;}
-
-//--cascades
-.cascade1 {animation: cascade1 1s .3s forwards;}
-
-@keyframes cascade1 {
-  0% {transform: translateY(-10px); opacity: 0;}
-  100% {transform: translateY(0); opacity: 1;}
-}
-
-/*************************************
-********* /PORTFOLIO PAGE *************
-************************************/
-
-/*************************************
-********* BLOG PAGE *****************
-************************************/
 .blog-container {
   .container {
     grid-column: 3 / span 8;
+
+    @include max($xl-width) {
+      grid-column: 2 / span 10;
+    }
+
+    @include max($md-width) {
+      grid-column: 1 / span 12;
+    }
+
     .blog-articles-container {
       display: grid;
       grid-template-columns: 1fr!important;
       grid-gap: 50px;
-      
+
+      @include max($xl-width) {
+        width: 800px;
+      }
+
+      @include max($lg-width) {
+        width: 90%;
+      }
+
+      @include max($md-width) {
+        width: 90%;
+      }
 
       .blog-article {
         display: flex;
@@ -1022,6 +1040,18 @@
           height: 450px;
           position: relative;
 
+          @include max($xl-width) {
+            height: 300px;
+          }
+
+          @include max($lg-width) {
+            height: 350px;
+          }
+
+          @include max($md-width) {
+            height: 300px;
+          }
+
           .button {
             position: absolute;
             bottom: 10px;
@@ -1031,7 +1061,7 @@
               padding: 0.4em 1.3em;
             }
           }
-          
+
 
           &:before {
             position: absolute;
@@ -1054,7 +1084,7 @@
           background: rgb(255, 255, 255);
           width: 100%;
           padding: 10px 30px;
-         
+
           .text-container {
             display: flex;
             flex-direction: column;
@@ -1085,14 +1115,6 @@
   }
 }
 
-/*************************************
-********* /BLOG PAGE ****************
-************************************/
-
-
-/*************************************
-********* BLOG SINGLE PAGE **********
-************************************/
 .image {
   background-image: url("../../images/blog-1.jpg");
   background-size: cover;
@@ -1108,9 +1130,19 @@
     z-index: 1;
     grid-column: 4 / span 6;
 
+    @include max($md-width) {
+      grid-column: 1 / span 12;
+    }
+
     .info {
       padding-top: 10px;
       display: flex;
+
+      @include max($md-width) {
+        display: grid;
+        grid-row-gap: 5px;
+      }
+
       .date, .topic, .comments {
         margin-right: 20px;
         text-transform: uppercase;
@@ -1128,6 +1160,11 @@
 
     .text {
       padding: 50px 0;
+
+      @include max($md-width) {
+        padding: 10px 0;
+      }
+
       p {
         padding: 10px 0;
         font-size: 1em;
@@ -1175,67 +1212,66 @@
       position: relative;
       width: 17px;
       height: 17px;
-    
-       &:before, &:after {
-         content:"";
-         position: absolute;
-         width: 6px;
-         height: 6px;
-         background: hsl(0, 0%, 0%);  
-         top: 0;
-         left: 0;  
-         transition: all .3s ease;
+
+      &:before, &:after {
+        content:"";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: hsl(0, 0%, 0%);
+        top: 0;
+        left: 0;
+        transition: all .3s ease;
+      }
+
+      &:after {
+        right: 0;
+        left: auto;
+      }
+
+      span {
+        &:before, &:after {
+          content:"";
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          background: hsl(0, 0%, 0%);
+          bottom: 0;
+          left: 0;
+          transition: all .3s ease;
         }
-    
+
         &:after {
           right: 0;
           left: auto;
         }
-    
-        span {
-          &:before, &:after {
-            content:"";
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: hsl(0, 0%, 0%);  
-            bottom: 0;
-            left: 0;  
-            transition: all .3s ease;
-           }
-       
-           &:after {
-             right: 0;
-             left: auto;
-           }
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &:before, &:after {
+          background: hsl(0, 0%, 58%);
         }
-    
-        &:hover {
+
+        span {
           cursor: pointer;
-    
+
           &:before, &:after {
             background: hsl(0, 0%, 58%);
           }
-    
-          span {
-            cursor: pointer;
-    
-            &:before, &:after {
-                background: hsl(0, 0%, 58%);
-            }
-          }
         }
-      } 
+      }
+    }
   }
 }
-
 
 .leave-comments-container {
   height: auto;
   background: #F6F6F6;
-  
+
   .container {
-    height: auto; 
+    height: auto;
     padding-top: 50px;
     z-index: 1;
     display: grid;
@@ -1244,26 +1280,39 @@
     grid-column: 4 / span 7;
     grid-row-gap: 30px;
 
+    @include max($md-width) {
+      grid-column: 1 / span 12;
+    }
+
     .title {
-        font-size: 1.6em;
-        grid-column: 1 / span 10;
+      font-size: 1.6em;
+      grid-column: 1 / span 10;
+
+      @include max($md-width) {
+        grid-column: 3 / span 10;
+      }
     }
 
     .text-container {
-      grid-column: 1 / span 5; 
-      
+      grid-column: 1 / span 5;
+
       p {
         line-height: 1.7;
       }
     }
-    
+
     .form-container {
       grid-column: 1 / span 11;
       display: grid;
       grid-template-rows: 60px auto;
       height: 400px;
       margin-left: -85px;
-      
+
+      @include max($md-width) {
+        margin-left: -25px;
+        grid-column: 3 / span 10;
+      }
+
       .form {
         display: grid;
         grid-row-gap: 24px;
@@ -1271,7 +1320,7 @@
         justify-content: space-evenly;
         align-items: center;
         height: 100%;
-        
+
         input, textarea {
           font-family: $work;
           border: none;
@@ -1280,7 +1329,7 @@
             font-family: $work;
           }
         }
-        
+
         .text-email-input {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -1292,9 +1341,9 @@
         .textarea-input, .name-input {
           width: 100%;
         }
-        
+
         .btn {
-          border: none; 
+          border: none;
           &:hover {
             cursor: pointer;
           }
@@ -1304,20 +1353,27 @@
   }
 }
 
-
 .comments-container {
   height: auto;
   padding-bottom: 100px;
-  
+
   .container {
-    z-index: 1; 
+    z-index: 1;
     grid-column: 3 / span 7;
     padding-top: 50px;
-    
+
+    @include max($md-width) {
+      grid-column: 1 / span 11;
+    }
+
     .title {
       font-size: 1.6em;
+
+      @include max($md-width) {
+        padding-left: 15px;
+      }
     }
-    
+
     .comments-section {
 
       margin-top: 20px;
@@ -1328,6 +1384,10 @@
         height: auto;
         display: flex;
 
+        @include max($sm-width) {
+          flex-direction: column;
+        }
+
         .picture {
           display: flex;
           flex: 1;
@@ -1336,11 +1396,22 @@
             cursor: pointer;
             opacity: 0.7;
           }
-          
+
           img {
-            width: 120px; 
+            width: 120px;
             height: 120px;
             border-radius: 50%;
+
+            @include max($md-width) {
+              width: 80px;
+              height: 80px;
+            }
+          }
+
+          @include max($md-width) {
+            padding: 10px 0;
+            align-items: center;
+            padding-left: 15px;
           }
         }
 
@@ -1351,11 +1422,20 @@
           font-size: 1em;
           padding-left: 15px;
 
+          @include max($md-width) {
+            padding: 10px 0;
+            padding-left: 15px;
+          }
+
           .top{
-            display: flex; 
+            display: flex;
             flex: 1;
             justify-content: space-between;
             font-weight: 500;
+
+            @include max($md-width) {
+              align-items: center;
+            }
 
             .name {
               display: flex;
@@ -1389,30 +1469,30 @@
           .bottom {
             display: flex;
             flex: 2;
-
             color: #5e5e5e;
+
+            @include max($md-width) {
+              padding: 10px 0;
+            }
           }
         }
       }
 
       .single-comment-two {
         margin-left: 100px;
+
+        @include max($sm-width) {
+          margin: auto;
+        }
       }
     }
   }
 }
-/*************************************
-********* /BLOG SINGLE PAGE *********
-************************************/
 
-
-/*************************************
-********* PORTFOLIO SINGLE *********
-************************************/
 .image-portfolio {
-    background-image: url("../../images/project-big.jpg");
-    background-size: cover;
-    height: 80vh;
+  background-image: url("../../images/project-big.jpg");
+  background-size: cover;
+  height: 80vh;
 }
 
 .project {
@@ -1424,12 +1504,19 @@
     z-index: 1;
     grid-column: 2 / span 10;
 
+    @include max($xl-width) {
+      grid-column: 1 / span 12;
+    }
+
     p {
       color: #464646;
     }
     .project-container {
       display: flex;
 
+      @include max($xl-width) {
+        flex-direction: column;
+      }
       .text {
         display: flex;
         flex-direction: column;
@@ -1454,6 +1541,12 @@
         flex-direction: column;
         width: 400px;
 
+        @include max($xl-width) {
+          padding-top: 25px;
+          padding-left: 0;
+          width: auto;
+        }
+
         p {
           margin-bottom: 10px;
         }
@@ -1461,10 +1554,3 @@
     }
   }
 }
-
-/*************************************
-********* /PORTFOLIO SINGLE *********
-************************************/
-
-
-

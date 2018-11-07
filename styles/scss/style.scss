@@ -1,4 +1,14 @@
-@import './modules/all';
-@import './partials/all';
-@import '../../OwlCarousel2-2.2.1/src/scss/owl.carousel';
-@import '../../OwlCarousel2-2.2.1/src/scss/owl.theme.default';
+@import
+'abstracts/functions',
+'abstracts/_keyframes.scss',
+'abstracts/mixins',
+'abstracts/variables',
+'base/base',
+'base/normalize',
+'base/reset',
+'layout/layout',
+'layout/main',
+'module/module.btns',
+'state/state',
+'utilities/utilities'
+;

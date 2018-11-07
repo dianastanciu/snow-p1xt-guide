@@ -1,0 +1,60 @@
+//tracking
+@mixin tracking($value) {
+  letter-spacing: ($value / 1000) + em;
+}
+
+//responsive screen
+@mixin max($width) {
+  @media (max-width: $width - 1) {
+    @content;
+  }
+}
+
+@mixin min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-max($min-width, $max-width) {
+  @media (min-width: $min-width) and (max-width: $max-width - 1) {
+    @content
+  }
+}
+
+//background variant
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color;
+  }
+}
+
+@mixin hover() {
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+@mixin config-icon-colors($prefix, $colors...) {
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      color: nth($i, 2);
+    }
+  }
+}
+@include config-icon-colors('icon-',
+        'save'   green,
+        'cancel' gray,
+        'delete' red
+);
+// compiled CSS
+//.icon-save {
+//  color: green;
+//}
+//.icon-cancel {
+//  color: gray;
+//}
+//.icon-delete {
+//  color: red;
+//}
